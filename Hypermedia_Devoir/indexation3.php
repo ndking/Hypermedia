@@ -65,7 +65,7 @@ function indexationTEXTE ($source,$mots)
 	{
 		if ($indice==$mots) {
 
-			echo "<li> $source : $indice  ($valeur)", '</li> <br>';
+			echo "<li> <a href=".$source.">  $source </a>: $indice  ($valeur)", '</li> <br>';
 		}
 		
 	}

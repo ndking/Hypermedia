@@ -1,6 +1,7 @@
 
 <style> 
-
+	/*css de la page avec la barre de recherche, le bouton , etc*/
+/*lien vers internet pour la police d'ecriture*/
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 body{
@@ -42,7 +43,7 @@ body{
   font-size: 20px;
 }
 
-/*Resize the wrap to see the search bar change!*/
+/*css pour changer la barre de recherche*/
 .wrap{
   width: 30%;
   position: absolute;
@@ -51,12 +52,14 @@ body{
   transform: translate(-50%, -50%);
 }
 
-h1 {
+/*h1 {
 
 	top: -65%;
 	left: 38%;
 	position: absolute;
 }
+
+*/
 </style>
 
 <div class="wrap">
@@ -76,6 +79,7 @@ h1 {
 <?php
 //Appel aux modules d'indexation :  pour des .txt
 
+//On appel le module indexation 3.php 
 include 'indexation3.php';
 
 //Augmentation du temps
@@ -87,8 +91,8 @@ explorerDir($path);
 
 function explorerDir($path)
 {
-	if (isset($_POST["txt"])) {
-		echo "Résultat pour ( ", $_POST["txt"]," ) : ",strlen($_POST["txt"]);
+	if (isset($_POST["txt"]) and !preg_match("#^\s*$#",$_POST['txt'])) {
+		echo "Résultat pour le mot ( ". $_POST["txt"]." ) :";
 		echo "<BR>";
 		echo "<BR>";
 	
